@@ -1,0 +1,6 @@
+0,15,30,45 * * * * /usr/bin/mpc update
+5 */3 * * * eval "export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus"; /home/beau/.local/bin/cron/checkup
+10 */2 * * * eval "export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus"; /home/beau/.local/bin/cron/newsup
+3 13 * * * newsboat -E "/home/beau/.config/newsboat/read_articles"
+7 16 * * * cd /home/beau/ ; git add -u ; git commit -m "crontab autocommit" ; git push
+9 15 * * * crontab -l > .config/cron/crontab.bak
