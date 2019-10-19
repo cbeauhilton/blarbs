@@ -24,10 +24,6 @@ https://eutils.ncbi.nlm.nih.gov/entrez/eutils/erss.cgi?rss_guid=1DoqKB8O4L1HKJ03
 https://eutils.ncbi.nlm.nih.gov/entrez/eutils/erss.cgi?rss_guid=1h3SAs98aPqmd6Vfxn_uiAWup_3lYctL4aAFP-Y7Eg8Pn6DEFA "ML" "Medicine" # Andrew Beam
 https://eutils.ncbi.nlm.nih.gov/entrez/eutils/erss.cgi?rss_guid=1LYeLHGBis0h-Lsf3JolAU4vKQfag0FIfccYEuHHw588IEaouQ "ML" "Medicine" # Luke Oakden-Rayner
 https://eutils.ncbi.nlm.nih.gov/entrez/eutils/erss.cgi?rss_guid=1z_pxc-9fhPUGO3O_yTKHOiZnSIaAVzVxhd2tmq3tMYy6gxEhK "ML" "Medicine" # Scott Lundberg
-http://www.bloodjournal.org/rss/current.xml "HemOnc" "Medicine"
-http://www.bloodjournal.org/rss/MYELOID_NEOPLASIA.xml "HemOnc" "Medicine"
-http://www.bloodjournal.org/rss/REVIEW_ARTICLES.xml "HemOnc" "Medicine"
-http://www.bloodjournal.org/rss/HOW_I_TREAT.xml "HemOnc" "Medicine"
 http://xpenguin.club/rss.xml "Tech"
 https://fharrell.com/post/index.xml "Statistics" "Medicine"
 https://davebucklin.com/feed.xml "Tech" "Gopher"
