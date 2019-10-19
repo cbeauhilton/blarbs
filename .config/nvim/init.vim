@@ -14,17 +14,33 @@ Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'jreybert/vimagit'
 Plug 'LukeSmithxyz/vimling'
-Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki', {'as': 'vimwiki', 'branch': 'dev' }
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'vifm/vifm.vim'
 Plug 'kovetskiy/sxhkd-vim'
+Plug 'chazy/dirsettings'
+Plug 'jalvesaq/Nvim-R'
+" Plug 'jalvesaq/zotcite'
+Plug 'shougo/unite.vim'
+Plug 'rafaqz/citation.vim'
+Plug 'davidhalter/jedi-vim'   " jedi for python
+Plug 'roxma/nvim-yarp'  " dependency of ncm2
+Plug 'ncm2/ncm2'  " awesome autocomplete plugin
+Plug 'HansPinckaers/ncm2-jedi'  " fast python completion (use ncm2 if you want type info or snippet support)
+Plug 'ncm2/ncm2-bufword'  " buffer keyword completion
+Plug 'ncm2/ncm2-path'  " filepath completion
 call plug#end()
+
+" path to your python
+let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/usr/bin/python2'
 
 set bg=light
 set go=a
 set mouse=a
 set nohlsearch
+set incsearch
 set clipboard+=unnamedplus
 
 " Some basics:
@@ -33,11 +49,43 @@ set clipboard+=unnamedplus
 	filetype plugin on
 	syntax on
 	set encoding=utf-8
+	set autoindent
+	set noexpandtab
+	set tabstop=4
+	set shiftwidth=4
 	set number relativenumber
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" ncm2 settings
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=menuone,noselect,noinsert
+" make it FAST
+let ncm2#popup_delay = 5
+let ncm2#complete_length = [[1,1]]
+let g:ncm2#matcher = 'substrfuzzy'
+
+" highlight python and self function
+autocmd BufEnter * syntax match Type /\v\.[a-zA-Z0-9_]+\ze(\[|\s|$|,|\]|\)|\.|:)/hs=s+1
+autocmd BufEnter * syntax match pythonFunction /\v[[:alnum:]_]+\ze(\s?\()/
+hi def link pythonFunction Function
+autocmd BufEnter * syn match Self "\(\W\|^\)\@<=self\(\.\)\@="
+highlight self ctermfg=239
+
+" jedi options
+let g:jedi#auto_initialization = 1
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#completions_command = ""
+let g:jedi#show_call_signatures = "1"
+let g:jedi#show_call_signatures_delay = 0
+let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#show_call_signatures_modes = 'i'  " ni = also in normal mode
+let g:jedi#enable_speed_debugging=0
 
 " Goyo plugin makes text more readable when writing prose:
 	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
@@ -85,8 +133,19 @@ set clipboard+=unnamedplus
 	autocmd VimLeave *.tex !texclear %
 
 " Ensure files are read as what I want:
-	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown', '.md': 'markdown', '.markdown': 'markdown', '.mkd': 'markdown', '.mdown': 'markdown'}
+	let g:vimwiki_list = [
+		\ {'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md',
+        \  'auto_diary_index': 1, 'auto_generate_links': 1,
+		\  'toc_header_level' : 1, 'markdown_toc' : 1,
+        \  'auto_generate_tags': 1, 'auto_tags': 1, 'auto_toc': 1,
+        \  'list_margin': 0,
+        \ }]
+	let g:vimwiki_markdown_link_ext = 1
+	let g:vimwiki_tags_header = 'Tags'
+	let g:vimwiki_links_header = 'Links'
+	let g:markdown_fenced_languages = ['r', 'python']
+	let g:rmd_fenced_languages = ['r', 'python']
 	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
@@ -223,7 +282,8 @@ set clipboard+=unnamedplus
 	autocmd Filetype rmd inoremap ,r ```{r}<CR>```<CR><CR><esc>2kO
 	autocmd Filetype rmd inoremap ,p ```{python}<CR>```<CR><CR><esc>2kO
 	autocmd Filetype rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
-
+	let g:citation_vim_bibtex_file="/life/dox/acad.bib"
+	let g:citation_vim_mode="bibtex"
 """.xml
 	autocmd FileType xml inoremap ,e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
 	autocmd FileType xml inoremap ,a <a href="<++>"><++></a><++><Esc>F"ci"

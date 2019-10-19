@@ -35,6 +35,8 @@ super + Scroll_Lock
 	killall screenkey || screenkey
 super + Insert
 	showclip
+super + Pause
+	xcqr
 super + shift + x
 	prompt "Shutdown computer?" "sudo -A shutdown -h now"
 super + shift + BackSpace
@@ -80,6 +82,8 @@ shift + Print
 	maimpick
 # Record audio or video
 super + Print
+	dmenurecord
+super + End
 	dmenurecord
 # kill active recording
 super + Delete
