@@ -93,6 +93,15 @@ let g:jedi#enable_speed_debugging=0
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
 
+    hi clear SpellBad
+    hi clear SpellLocal
+    hi clear SpellCap
+    hi clear SpellRare
+    hi SpellBad ctermfg=red
+    hi SpellLocal ctermfg=green
+    hi SpellCap ctermfg=yellow
+    hi SpellRare ctermfg=green
+
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
 
