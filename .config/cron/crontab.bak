@@ -1,6 +1,33 @@
+### updates ##
+# sync mail
+20 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.profile; /usr/bin/mailsync
+# update music library
 0,15,30,45 * * * * /usr/bin/mpc update
+# download packages (but do not install)
 5 */3 * * * eval "export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus"; /home/beau/.local/bin/cron/checkup
+# update newsboat
 10 */2 * * * eval "export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus"; /home/beau/.local/bin/cron/newsup
-3 13 * * * newsboat -E "/home/beau/.config/newsboat/read_articles"
-7 16 * * * cd /home/beau/ ; git add -u ; git commit -m "crontab autocommit" ; git push
+
+### backups ###
+
+# crontab backup
 9 15 * * * crontab -l > .config/cron/crontab.bak
+# newsboat read articles backup
+3 13 * * * newsboat -E "/home/beau/.config/newsboat/read_articles"
+# newsboat sync read articles
+2 14 * * * newsboat -I "/home/beau/.config/newsboat/read_articles"
+# regularly git push dotfiles
+7 16 * * * cd /home/beau/ ; git add -u ; git commit -m "crontab autocommit" ; git push
+
+################===YT-DL===################
+# Luke Smith
+#* */2 * * * cd /home/beau/vids/instructional/luke_smith && /bin/youtube-dl --add-metadata --download-archive '/home/beau/vids/instructional/luke_smith/downloadedxyz.txt' -f best -ciw -o "\%(upload_date)s_\%(uploader)s_\%(title)s.\%(ext)s" -v https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA/ && rm *.part
+# fastai
+#* * */2 * * mkdir -p /home/beau/vids/instructional/fastai && cd /home/beau/vids/instructional/fastai && /bin/youtube-dl --add-metadata --download-archive '/home/beau/vids/instructional/fastai/downloadedfai.txt' -f best -ciw -o "\%(upload_date)s_\%(uploader)s_\%(title)s.\%(ext)s" -v https://www.youtube.com/playlist?list=PLfYUBJiXbdtSIJb-Qd3pw0cqCbkGeS0xn && rm *.part
+################===========################
+#
+# * * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.profile; ~/.scripts/cron/newsup
+# */4 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.profile; ~/.scripts/cron/cronbat
+# */31 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.profile; ~/.scripts/cron/getforecast
+# 7 */3 * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.profile; ~/.scripts/cron/checkup
+# * * * * * ~/.scripts/cron/getforecast && /bin/echo "getforecast works!" >> /tmp/file && /bin/date >> /tmp/file

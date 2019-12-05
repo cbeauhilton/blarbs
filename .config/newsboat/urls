@@ -12,7 +12,7 @@ http://www.fast.ai/atom.xml "ML"
 http://machinelearningmastery.com/blog/feed "ML"
 https://medium.com/feed/@williamkoehrsen "ML"
 https://distill.pub/rss.xml "ML"
-https://erikbern.com/atom.xml "ML"
+https://erikbern.com/atom.xml "ML" "Tech"
 https://texblog.org/feed/ "TeX"
 http://aiweirdness.com/rss "ML"
 https://medium.com/feed/@shiutangli "ML"
@@ -29,3 +29,11 @@ https://fharrell.com/post/index.xml "Statistics" "Medicine"
 https://davebucklin.com/feed.xml "Tech" "Gopher"
 # mutt gmail kjdfpopyuilrhqpe
 # ln test
+http://feeds.feedburner.com/MrMoneyMustache "Finance"
+http://feeds.feedburner.com/StudyHacks
+https://www.jpsmjournal.com/current.rss "Medicine" "Palliative Care"
+https://beauhilton.com/feed.xml
+https://standardebooks.org/rss/new-releases "Literature"
+https://emptysqua.re/blog/index.xml "Tech" "Programming" "Buddhism"
+https://jvns.ca/atom.xml "Tech" "Teaching"
+https://tastetesterdoc.com/feed "Medicine" "Friends"

@@ -9,14 +9,14 @@ export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput se
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/beau/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/beau/sci/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/beau/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/beau/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/beau/sci/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/beau/sci/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/beau/miniconda3/bin:$PATH"
+        export PATH="/home/beau/sci/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup

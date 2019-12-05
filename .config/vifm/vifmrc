@@ -54,7 +54,9 @@ fileviewer *.odt odt2txt %c -
 filetype *.csv,*.xlsx sc-im %c
 fileviewer *.csv sed "s/,,,,/,,-,,/g;s/,,/ /g" %c | column -t | sed "s/ - /  /g" | cut -c -%pw
 
-filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus mpv --no-audio-display --input-ipc-server=/tmp/mpvsoc$(date +%%s) %c
+filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,*.mid mpv --no-audio-display --input-ipc-server=/tmp/mpvsoc$(date +%%s) %c
+filetype *.mp4,*.mkv mpv %f
+filetype *.pdf zathura %c
 fileview *.zip,*.rar,*.tar.gz atool -l %f
 filetype *.zip,*.rar,*.tar.gz ext %f
 

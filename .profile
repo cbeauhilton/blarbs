@@ -8,11 +8,13 @@ export TERMINAL="st"
 export BROWSER="chromium"
 export READER="zathura"
 export FILE="vifmrun"
-export BIB="$HOME/Documents/LaTeX/uni.bib"
-export REFER="$HOME/Documents/referbib"
+export BIB="$HOME/repos/life/dox/acad.bib"
+export REFER="$HOME/repos/life/dox/thesis/thesis.refer"
 export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"
 export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
+export GPG_TTY=$(tty)
+export GPG_AGENT_INFO=""
 
 # less/man colors
 export LESS=-R
@@ -35,3 +37,16 @@ echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc
 
 # Switch escape and caps if tty:
 sudo -n loadkeys ~/.local/bin/ttymaps.kmap 2>/dev/null
+
+# Start SSH Agent automatically on login
+if [ -z "$SSH_AUTH_SOCK" ]
+then
+   # Check for a currently running instance of the agent
+   RUNNING_AGENT="`ps -ax | grep 'ssh-agent -s' | grep -v grep | wc -l | tr -d '[:space:]'`"
+   if [ "$RUNNING_AGENT" = "0" ]
+   then
+        # Launch a new instance of the agent
+        ssh-agent -s &> .ssh/ssh-agent
+   fi
+   eval `cat .ssh/ssh-agent`
+fi

@@ -11,6 +11,9 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'jreybert/vimagit'
 Plug 'LukeSmithxyz/vimling'
@@ -30,7 +33,12 @@ Plug 'ncm2/ncm2'  " awesome autocomplete plugin
 Plug 'HansPinckaers/ncm2-jedi'  " fast python completion (use ncm2 if you want type info or snippet support)
 Plug 'ncm2/ncm2-bufword'  " buffer keyword completion
 Plug 'ncm2/ncm2-path'  " filepath completion
+Plug 'frazrepo/vim-rainbow'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'scrooloose/nerdcommenter'
+Plug 'mileszs/ack.vim'
 call plug#end()
+
 
 " path to your python
 let g:python3_host_prog = '/usr/bin/python3'
@@ -42,6 +50,7 @@ set mouse=a
 set nohlsearch
 set incsearch
 set clipboard+=unnamedplus
+set updatetime=300
 
 " Some basics:
 	nnoremap c "_c
@@ -54,14 +63,19 @@ set clipboard+=unnamedplus
 	set tabstop=4
 	set shiftwidth=4
 	set number relativenumber
+	autocmd CursorHold * update
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" vim rainbow
+let g:rainbow_active = 1
+
 " ncm2 settings
 autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=menuone,noselect,noinsert
+
 " make it FAST
 let ncm2#popup_delay = 5
 let ncm2#complete_length = [[1,1]]
@@ -74,12 +88,56 @@ hi def link pythonFunction Function
 autocmd BufEnter * syn match Self "\(\W\|^\)\@<=self\(\.\)\@="
 highlight self ctermfg=239
 
+" coc settings
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Or use `complete_info` if your vim support it, like:
+" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+nmap <leader>rn <Plug>(coc-rename)
+
+" silver searcher settings
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 " jedi options
 let g:jedi#auto_initialization = 1
-let g:jedi#completions_enabled = 0
+let g:jedi#completions_enabled = 1
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
+let g:jedi#popup_on_dot = 1
 let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
 let g:jedi#show_call_signatures_delay = 0
@@ -102,7 +160,7 @@ let g:jedi#enable_speed_debugging=0
     hi SpellCap ctermfg=yellow
     hi SpellRare ctermfg=green
 
-" Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
+" Splits open at the bottom and right.
 	set splitbelow splitright
 
 " Nerd tree
