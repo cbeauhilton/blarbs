@@ -27,6 +27,7 @@ Plug 'jalvesaq/Nvim-R'
 " Plug 'jalvesaq/zotcite'
 Plug 'shougo/unite.vim'
 Plug 'rafaqz/citation.vim'
+Plug 'vim-python/python-syntax'
 Plug 'davidhalter/jedi-vim'   " jedi for python
 Plug 'roxma/nvim-yarp'  " dependency of ncm2
 Plug 'ncm2/ncm2'  " awesome autocomplete plugin
@@ -37,8 +38,8 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdcommenter'
 Plug 'mileszs/ack.vim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
-
 
 " path to your python
 let g:python3_host_prog = '/usr/bin/python3'
@@ -75,8 +76,6 @@ let g:rainbow_active = 1
 " ncm2 settings
 autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=menuone,noselect,noinsert
-
-" make it FAST
 let ncm2#popup_delay = 5
 let ncm2#complete_length = [[1,1]]
 let g:ncm2#matcher = 'substrfuzzy'
@@ -87,6 +86,7 @@ autocmd BufEnter * syntax match pythonFunction /\v[[:alnum:]_]+\ze(\s?\()/
 hi def link pythonFunction Function
 autocmd BufEnter * syn match Self "\(\W\|^\)\@<=self\(\.\)\@="
 highlight self ctermfg=239
+let g:python_highlight_all = 1
 
 " coc settings
 inoremap <silent><expr> <TAB>
@@ -94,32 +94,26 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
-
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
 " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -167,6 +161,11 @@ let g:jedi#enable_speed_debugging=0
 	map <leader>n :NERDTreeToggle<CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" NerdCommenter
+let g:NERDSpaceDelims = 1
+let g:NERDToggleCheckAllLines = 1
+let g:NERDCommentEmptyLines = 1
+
 " vimling:
 	nm <leader>d :call ToggleDeadKeys()<CR>
 	imap <leader>d <esc>:call ToggleDeadKeys()<CR>a
@@ -201,6 +200,8 @@ let g:jedi#enable_speed_debugging=0
 
 " Ensure files are read as what I want:
 	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown', '.md': 'markdown', '.markdown': 'markdown', '.mkd': 'markdown', '.mdown': 'markdown'}
+
+" Vimwiki
 	let g:vimwiki_list = [
 		\ {'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md',
         \  'auto_diary_index': 1, 'auto_generate_links': 1,
@@ -242,97 +243,6 @@ let g:jedi#enable_speed_debugging=0
 " Save file as sudo on files that require root permission
 	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
-"""LATEX
-	" Word count:
-	autocmd FileType tex map <leader>w :w !detex \| wc -w<CR>
-	" Code snippets
-	autocmd FileType tex inoremap ,fr \begin{frame}<Enter>\frametitle{}<Enter><Enter><++><Enter><Enter>\end{frame}<Enter><Enter><++><Esc>6kf}i
-	autocmd FileType tex inoremap ,fi \begin{fitch}<Enter><Enter>\end{fitch}<Enter><Enter><++><Esc>3kA
-	autocmd FileType tex inoremap ,exe \begin{exe}<Enter>\ex<Space><Enter>\end{exe}<Enter><Enter><++><Esc>3kA
-	autocmd FileType tex inoremap ,em \emph{}<++><Esc>T{i
-	autocmd FileType tex inoremap ,bf \textbf{}<++><Esc>T{i
-	autocmd FileType tex vnoremap , <ESC>`<i\{<ESC>`>2la}<ESC>?\\{<Enter>a
-	autocmd FileType tex inoremap ,it \textit{}<++><Esc>T{i
-	autocmd FileType tex inoremap ,ct \textcite{}<++><Esc>T{i
-	autocmd FileType tex inoremap ,cp \parencite{}<++><Esc>T{i
-	autocmd FileType tex inoremap ,glos {\gll<Space><++><Space>\\<Enter><++><Space>\\<Enter>\trans{``<++>''}}<Esc>2k2bcw
-	autocmd FileType tex inoremap ,x \begin{xlist}<Enter>\ex<Space><Enter>\end{xlist}<Esc>kA<Space>
-	autocmd FileType tex inoremap ,ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>
-	autocmd FileType tex inoremap ,ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>
-	autocmd FileType tex inoremap ,li <Enter>\item<Space>
-	autocmd FileType tex inoremap ,ref \ref{}<Space><++><Esc>T{i
-	autocmd FileType tex inoremap ,tab \begin{tabular}<Enter><++><Enter>\end{tabular}<Enter><Enter><++><Esc>4kA{}<Esc>i
-	autocmd FileType tex inoremap ,ot \begin{tableau}<Enter>\inp{<++>}<Tab>\const{<++>}<Tab><++><Enter><++><Enter>\end{tableau}<Enter><Enter><++><Esc>5kA{}<Esc>i
-	autocmd FileType tex inoremap ,can \cand{}<Tab><++><Esc>T{i
-	autocmd FileType tex inoremap ,con \const{}<Tab><++><Esc>T{i
-	autocmd FileType tex inoremap ,v \vio{}<Tab><++><Esc>T{i
-	autocmd FileType tex inoremap ,a \href{}{<++>}<Space><++><Esc>2T{i
-	autocmd FileType tex inoremap ,sc \textsc{}<Space><++><Esc>T{i
-	autocmd FileType tex inoremap ,chap \chapter{}<Enter><Enter><++><Esc>2kf}i
-	autocmd FileType tex inoremap ,sec \section{}<Enter><Enter><++><Esc>2kf}i
-	autocmd FileType tex inoremap ,ssec \subsection{}<Enter><Enter><++><Esc>2kf}i
-	autocmd FileType tex inoremap ,sssec \subsubsection{}<Enter><Enter><++><Esc>2kf}i
-	autocmd FileType tex inoremap ,st <Esc>F{i*<Esc>f}i
-	autocmd FileType tex inoremap ,beg \begin{DELRN}<Enter><++><Enter>\end{DELRN}<Enter><Enter><++><Esc>4k0fR:MultipleCursorsFind<Space>DELRN<Enter>c
-	autocmd FileType tex inoremap ,up <Esc>/usepackage<Enter>o\usepackage{}<Esc>i
-	autocmd FileType tex nnoremap ,up /usepackage<Enter>o\usepackage{}<Esc>i
-	autocmd FileType tex inoremap ,tt \texttt{}<Space><++><Esc>T{i
-	autocmd FileType tex inoremap ,bt {\blindtext}
-	autocmd FileType tex inoremap ,nu $\varnothing$
-	autocmd FileType tex inoremap ,col \begin{columns}[T]<Enter>\begin{column}{.5\textwidth}<Enter><Enter>\end{column}<Enter>\begin{column}{.5\textwidth}<Enter><++><Enter>\end{column}<Enter>\end{columns}<Esc>5kA
-	autocmd FileType tex inoremap ,rn (\ref{})<++><Esc>F}i
-
-"""HTML
-	autocmd FileType html inoremap ,b <b></b><Space><++><Esc>FbT>i
-	autocmd FileType html inoremap ,it <em></em><Space><++><Esc>FeT>i
-	autocmd FileType html inoremap ,1 <h1></h1><Enter><Enter><++><Esc>2kf<i
-	autocmd FileType html inoremap ,2 <h2></h2><Enter><Enter><++><Esc>2kf<i
-	autocmd FileType html inoremap ,3 <h3></h3><Enter><Enter><++><Esc>2kf<i
-	autocmd FileType html inoremap ,p <p></p><Enter><Enter><++><Esc>02kf>a
-	autocmd FileType html inoremap ,a <a<Space>href=""><++></a><Space><++><Esc>14hi
-	autocmd FileType html inoremap ,e <a<Space>target="_blank"<Space>href=""><++></a><Space><++><Esc>14hi
-	autocmd FileType html inoremap ,ul <ul><Enter><li></li><Enter></ul><Enter><Enter><++><Esc>03kf<i
-	autocmd FileType html inoremap ,li <Esc>o<li></li><Esc>F>a
-	autocmd FileType html inoremap ,ol <ol><Enter><li></li><Enter></ol><Enter><Enter><++><Esc>03kf<i
-	autocmd FileType html inoremap ,im <img src="" alt="<++>"><++><esc>Fcf"a
-	autocmd FileType html inoremap ,td <td></td><++><Esc>Fdcit
-	autocmd FileType html inoremap ,tr <tr></tr><Enter><++><Esc>kf<i
-	autocmd FileType html inoremap ,th <th></th><++><Esc>Fhcit
-	autocmd FileType html inoremap ,tab <table><Enter></table><Esc>O
-	autocmd FileType html inoremap ,gr <font color="green"></font><Esc>F>a
-	autocmd FileType html inoremap ,rd <font color="red"></font><Esc>F>a
-	autocmd FileType html inoremap ,yl <font color="yellow"></font><Esc>F>a
-	autocmd FileType html inoremap ,dt <dt></dt><Enter><dd><++></dd><Enter><++><esc>2kcit
-	autocmd FileType html inoremap ,dl <dl><Enter><Enter></dl><enter><enter><++><esc>3kcc
-	autocmd FileType html inoremap &<space> &amp;<space>
-	autocmd FileType html inoremap á &aacute;
-	autocmd FileType html inoremap é &eacute;
-	autocmd FileType html inoremap í &iacute;
-	autocmd FileType html inoremap ó &oacute;
-	autocmd FileType html inoremap ú &uacute;
-	autocmd FileType html inoremap ä &auml;
-	autocmd FileType html inoremap ë &euml;
-	autocmd FileType html inoremap ï &iuml;
-	autocmd FileType html inoremap ö &ouml;
-	autocmd FileType html inoremap ü &uuml;
-	autocmd FileType html inoremap ã &atilde;
-	autocmd FileType html inoremap ẽ &etilde;
-	autocmd FileType html inoremap ĩ &itilde;
-	autocmd FileType html inoremap õ &otilde;
-	autocmd FileType html inoremap ũ &utilde;
-	autocmd FileType html inoremap ñ &ntilde;
-	autocmd FileType html inoremap à &agrave;
-	autocmd FileType html inoremap è &egrave;
-	autocmd FileType html inoremap ì &igrave;
-	autocmd FileType html inoremap ò &ograve;
-	autocmd FileType html inoremap ù &ugrave;
-
-
-""".bib
-	autocmd FileType bib inoremap ,a @article{<Enter>author<Space>=<Space>{<++>},<Enter>year<Space>=<Space>{<++>},<Enter>title<Space>=<Space>{<++>},<Enter>journal<Space>=<Space>{<++>},<Enter>volume<Space>=<Space>{<++>},<Enter>pages<Space>=<Space>{<++>},<Enter>}<Enter><++><Esc>8kA,<Esc>i
-	autocmd FileType bib inoremap ,b @book{<Enter>author<Space>=<Space>{<++>},<Enter>year<Space>=<Space>{<++>},<Enter>title<Space>=<Space>{<++>},<Enter>publisher<Space>=<Space>{<++>},<Enter>}<Enter><++><Esc>6kA,<Esc>i
-	autocmd FileType bib inoremap ,c @incollection{<Enter>author<Space>=<Space>{<++>},<Enter>title<Space>=<Space>{<++>},<Enter>booktitle<Space>=<Space>{<++>},<Enter>editor<Space>=<Space>{<++>},<Enter>year<Space>=<Space>{<++>},<Enter>publisher<Space>=<Space>{<++>},<Enter>}<Enter><++><Esc>8kA,<Esc>i
-
 "MARKDOWN
 	autocmd Filetype markdown,rmd map <leader>w yiWi[<esc>Ea](<esc>pa)
 	autocmd Filetype markdown,rmd inoremap ,n ---<Enter><Enter>
@@ -351,6 +261,98 @@ let g:jedi#enable_speed_debugging=0
 	autocmd Filetype rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
 	let g:citation_vim_bibtex_file="/life/dox/acad.bib"
 	let g:citation_vim_mode="bibtex"
-""".xml
-	autocmd FileType xml inoremap ,e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
-	autocmd FileType xml inoremap ,a <a href="<++>"><++></a><++><Esc>F"ci"
+
+"".xml
+	" autocmd FileType xml inoremap ,e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
+	" autocmd FileType xml inoremap ,a <a href="<++>"><++></a><++><Esc>F"ci"
+"
+" """.bib
+	" autocmd FileType bib inoremap ,a @article{<Enter>author<Space>=<Space>{<++>},<Enter>year<Space>=<Space>{<++>},<Enter>title<Space>=<Space>{<++>},<Enter>journal<Space>=<Space>{<++>},<Enter>volume<Space>=<Space>{<++>},<Enter>pages<Space>=<Space>{<++>},<Enter>}<Enter><++><Esc>8kA,<Esc>i
+	" autocmd FileType bib inoremap ,b @book{<Enter>author<Space>=<Space>{<++>},<Enter>year<Space>=<Space>{<++>},<Enter>title<Space>=<Space>{<++>},<Enter>publisher<Space>=<Space>{<++>},<Enter>}<Enter><++><Esc>6kA,<Esc>i
+	" autocmd FileType bib inoremap ,c @incollection{<Enter>author<Space>=<Space>{<++>},<Enter>title<Space>=<Space>{<++>},<Enter>booktitle<Space>=<Space>{<++>},<Enter>editor<Space>=<Space>{<++>},<Enter>year<Space>=<Space>{<++>},<Enter>publisher<Space>=<Space>{<++>},<Enter>}<Enter><++><Esc>8kA,<Esc>i
+"
+" """HTML
+	" autocmd FileType html inoremap ,b <b></b><Space><++><Esc>FbT>i
+	" autocmd FileType html inoremap ,it <em></em><Space><++><Esc>FeT>i
+	" autocmd FileType html inoremap ,1 <h1></h1><Enter><Enter><++><Esc>2kf<i
+	" autocmd FileType html inoremap ,2 <h2></h2><Enter><Enter><++><Esc>2kf<i
+	" autocmd FileType html inoremap ,3 <h3></h3><Enter><Enter><++><Esc>2kf<i
+	" autocmd FileType html inoremap ,p <p></p><Enter><Enter><++><Esc>02kf>a
+	" autocmd FileType html inoremap ,a <a<Space>href=""><++></a><Space><++><Esc>14hi
+	" autocmd FileType html inoremap ,e <a<Space>target="_blank"<Space>href=""><++></a><Space><++><Esc>14hi
+	" autocmd FileType html inoremap ,ul <ul><Enter><li></li><Enter></ul><Enter><Enter><++><Esc>03kf<i
+	" autocmd FileType html inoremap ,li <Esc>o<li></li><Esc>F>a
+	" autocmd FileType html inoremap ,ol <ol><Enter><li></li><Enter></ol><Enter><Enter><++><Esc>03kf<i
+	" autocmd FileType html inoremap ,im <img src="" alt="<++>"><++><esc>Fcf"a
+	" autocmd FileType html inoremap ,td <td></td><++><Esc>Fdcit
+	" autocmd FileType html inoremap ,tr <tr></tr><Enter><++><Esc>kf<i
+	" autocmd FileType html inoremap ,th <th></th><++><Esc>Fhcit
+	" autocmd FileType html inoremap ,tab <table><Enter></table><Esc>O
+	" autocmd FileType html inoremap ,gr <font color="green"></font><Esc>F>a
+	" autocmd FileType html inoremap ,rd <font color="red"></font><Esc>F>a
+	" autocmd FileType html inoremap ,yl <font color="yellow"></font><Esc>F>a
+	" autocmd FileType html inoremap ,dt <dt></dt><Enter><dd><++></dd><Enter><++><esc>2kcit
+	" autocmd FileType html inoremap ,dl <dl><Enter><Enter></dl><enter><enter><++><esc>3kcc
+	" autocmd FileType html inoremap &<space> &amp;<space>
+	" autocmd FileType html inoremap á &aacute;
+	" autocmd FileType html inoremap é &eacute;
+	" autocmd FileType html inoremap í &iacute;
+	" autocmd FileType html inoremap ó &oacute;
+	" autocmd FileType html inoremap ú &uacute;
+	" autocmd FileType html inoremap ä &auml;
+	" autocmd FileType html inoremap ë &euml;
+	" autocmd FileType html inoremap ï &iuml;
+	" autocmd FileType html inoremap ö &ouml;
+	" autocmd FileType html inoremap ü &uuml;
+	" autocmd FileType html inoremap ã &atilde;
+	" autocmd FileType html inoremap ẽ &etilde;
+	" autocmd FileType html inoremap ĩ &itilde;
+	" autocmd FileType html inoremap õ &otilde;
+	" autocmd FileType html inoremap ũ &utilde;
+	" autocmd FileType html inoremap ñ &ntilde;
+	" autocmd FileType html inoremap à &agrave;
+	" autocmd FileType html inoremap è &egrave;
+	" autocmd FileType html inoremap ì &igrave;
+	" autocmd FileType html inoremap ò &ograve;
+	" autocmd FileType html inoremap ù &ugrave;
+"
+" """LATEX
+	" " Word count:
+	" autocmd FileType tex map <leader>w :w !detex \| wc -w<CR>
+	" " Code snippets
+	" autocmd FileType tex inoremap ,fr \begin{frame}<Enter>\frametitle{}<Enter><Enter><++><Enter><Enter>\end{frame}<Enter><Enter><++><Esc>6kf}i
+	" autocmd FileType tex inoremap ,fi \begin{fitch}<Enter><Enter>\end{fitch}<Enter><Enter><++><Esc>3kA
+	" autocmd FileType tex inoremap ,exe \begin{exe}<Enter>\ex<Space><Enter>\end{exe}<Enter><Enter><++><Esc>3kA
+	" autocmd FileType tex inoremap ,em \emph{}<++><Esc>T{i
+	" autocmd FileType tex inoremap ,bf \textbf{}<++><Esc>T{i
+	" autocmd FileType tex vnoremap , <ESC>`<i\{<ESC>`>2la}<ESC>?\\{<Enter>a
+	" autocmd FileType tex inoremap ,it \textit{}<++><Esc>T{i
+	" autocmd FileType tex inoremap ,ct \textcite{}<++><Esc>T{i
+	" autocmd FileType tex inoremap ,cp \parencite{}<++><Esc>T{i
+	" autocmd FileType tex inoremap ,glos {\gll<Space><++><Space>\\<Enter><++><Space>\\<Enter>\trans{``<++>''}}<Esc>2k2bcw
+	" autocmd FileType tex inoremap ,x \begin{xlist}<Enter>\ex<Space><Enter>\end{xlist}<Esc>kA<Space>
+	" autocmd FileType tex inoremap ,ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>
+	" autocmd FileType tex inoremap ,ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>
+	" autocmd FileType tex inoremap ,li <Enter>\item<Space>
+	" autocmd FileType tex inoremap ,ref \ref{}<Space><++><Esc>T{i
+	" autocmd FileType tex inoremap ,tab \begin{tabular}<Enter><++><Enter>\end{tabular}<Enter><Enter><++><Esc>4kA{}<Esc>i
+	" autocmd FileType tex inoremap ,ot \begin{tableau}<Enter>\inp{<++>}<Tab>\const{<++>}<Tab><++><Enter><++><Enter>\end{tableau}<Enter><Enter><++><Esc>5kA{}<Esc>i
+	" autocmd FileType tex inoremap ,can \cand{}<Tab><++><Esc>T{i
+	" autocmd FileType tex inoremap ,con \const{}<Tab><++><Esc>T{i
+	" autocmd FileType tex inoremap ,v \vio{}<Tab><++><Esc>T{i
+	" autocmd FileType tex inoremap ,a \href{}{<++>}<Space><++><Esc>2T{i
+	" autocmd FileType tex inoremap ,sc \textsc{}<Space><++><Esc>T{i
+	" autocmd FileType tex inoremap ,chap \chapter{}<Enter><Enter><++><Esc>2kf}i
+	" autocmd FileType tex inoremap ,sec \section{}<Enter><Enter><++><Esc>2kf}i
+	" autocmd FileType tex inoremap ,ssec \subsection{}<Enter><Enter><++><Esc>2kf}i
+	" autocmd FileType tex inoremap ,sssec \subsubsection{}<Enter><Enter><++><Esc>2kf}i
+	" autocmd FileType tex inoremap ,st <Esc>F{i*<Esc>f}i
+	" autocmd FileType tex inoremap ,beg \begin{DELRN}<Enter><++><Enter>\end{DELRN}<Enter><Enter><++><Esc>4k0fR:MultipleCursorsFind<Space>DELRN<Enter>c
+	" autocmd FileType tex inoremap ,up <Esc>/usepackage<Enter>o\usepackage{}<Esc>i
+	" autocmd FileType tex nnoremap ,up /usepackage<Enter>o\usepackage{}<Esc>i
+	" autocmd FileType tex inoremap ,tt \texttt{}<Space><++><Esc>T{i
+	" autocmd FileType tex inoremap ,bt {\blindtext}
+	" autocmd FileType tex inoremap ,nu $\varnothing$
+	" autocmd FileType tex inoremap ,col \begin{columns}[T]<Enter>\begin{column}{.5\textwidth}<Enter><Enter>\end{column}<Enter>\begin{column}{.5\textwidth}<Enter><++><Enter>\end{column}<Enter>\end{columns}<Esc>5kA
+	" autocmd FileType tex inoremap ,rn (\ref{})<++><Esc>F}i
+"
