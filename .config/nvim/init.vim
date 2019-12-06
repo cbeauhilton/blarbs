@@ -70,7 +70,7 @@ set updatetime=300
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" vim rainbow
+" vim rainbow settings
 let g:rainbow_active = 1
 
 " ncm2 settings
@@ -126,7 +126,7 @@ nmap <leader>rn <Plug>(coc-rename)
 " silver searcher settings
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" jedi options
+" jedi settings
 let g:jedi#auto_initialization = 1
 let g:jedi#completions_enabled = 1
 let g:jedi#auto_vim_configuration = 0
@@ -157,16 +157,16 @@ let g:jedi#enable_speed_debugging=0
 " Splits open at the bottom and right.
 	set splitbelow splitright
 
-" Nerd tree
+" Nerd tree settings
 	map <leader>n :NERDTreeToggle<CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" NerdCommenter
+" NerdCommenter settings
 let g:NERDSpaceDelims = 1
 let g:NERDToggleCheckAllLines = 1
 let g:NERDCommentEmptyLines = 1
 
-" vimling:
+" vimling
 	nm <leader>d :call ToggleDeadKeys()<CR>
 	imap <leader>d <esc>:call ToggleDeadKeys()<CR>a
 	nm <leader>i :call ToggleIPA()<CR>
@@ -201,7 +201,7 @@ let g:NERDCommentEmptyLines = 1
 " Ensure files are read as what I want:
 	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown', '.md': 'markdown', '.markdown': 'markdown', '.mkd': 'markdown', '.mdown': 'markdown'}
 
-" Vimwiki
+" Vimwiki settings
 	let g:vimwiki_list = [
 		\ {'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md',
         \  'auto_diary_index': 1, 'auto_generate_links': 1,
