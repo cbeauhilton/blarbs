@@ -79,6 +79,7 @@ set completeopt=menuone,noselect,noinsert
 let ncm2#popup_delay = 5
 let ncm2#complete_length = [[1,1]]
 let g:ncm2#matcher = 'substrfuzzy'
+let g:R_assign = 0
 
 " highlight python and self function
 autocmd BufEnter * syntax match Type /\v\.[a-zA-Z0-9_]+\ze(\[|\s|$|,|\]|\)|\.|:)/hs=s+1
