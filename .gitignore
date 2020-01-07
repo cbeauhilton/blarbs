@@ -3,3 +3,6 @@
 *.zip
 *.jpg
 *.gif
+
+.cache/
+~/.config/Code/

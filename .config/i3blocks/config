@@ -42,9 +42,9 @@ signal=5
 #interval=30
 #label=🧠
 
-#[cpu]
-#interval=15
-#label=💻
+[cpu]
+interval=15
+label=💻
 
 [volume]
 interval=once
