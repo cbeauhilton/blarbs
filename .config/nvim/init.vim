@@ -282,5 +282,28 @@ call plug#end()
     autocmd Filetype rmd inoremap ,r ```{r}<CR>```<CR><CR><esc>2kO
     autocmd Filetype rmd inoremap ,p ```{python}<CR>```<CR><CR><esc>2kO
     autocmd Filetype rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
+
+" citations
     let g:citation_vim_bibtex_file="repos/life/dox/acad.bib"
     let g:citation_vim_mode="bibtex"
+    let g:citation_vim_cache_path='~/.config/nvim/cache'
+    nmap <leader>u [unite]
+    nnoremap [unite] <nop>
+    nnoremap <silent>[unite]c       :<C-u>Unite -buffer-name=citation-start-insert -default-action=append      citation/key<cr>
+    nnoremap <silent>[unite]co :<C-u>Unite -input=<C-R><C-W> -default-action=start -force-immediately citation/file<cr>
+    nnoremap <silent><leader>cu :<C-u>Unite -input=<C-R><C-W> -default-action=start -force-immediately citation/url<cr>
+    nnoremap <silent>[unite]ci :<C-u>Unite -input=<C-R><C-W> -default-action=preview -force-immediately citation/combined<cr>
+    "nnoremap <silent>[unite]cp :<C-u>Unite -default-action=yank citation/your_source_here<cr>
+    nnoremap <silent>[unite]cs :<C-u>Unite  -default-action=yank  citation/key:<C-R><C-W><cr>
+    vnoremap <silent>[unite]cs :<C-u>exec "Unite  -default-action=start citation/key:" . escape(@*,' ') <cr>
+    nnoremap <silent>[unite]cx :<C-u>exec "Unite  -default-action=start citation/key:" . escape(input('Search Key : '),' ') <cr>
+    let g:citation_vim_description_format = "{} ┃ {} ┃ {} ┃ {} ┃ {}"
+    let g:citation_vim_description_fields = ["key","author","publication","journal","doi"]
+    autocmd FileType unite call s:unite_my_settings()
+    function! s:unite_my_settings()
+      nnoremap <silent><buffer><expr> <C-o> unite#do_action('start')
+      imap     <silent><buffer><expr> <C-o> unite#do_action('start')
+      nnoremap <silent><buffer><expr> <C-i> unite#do_action('preview')
+      imap     <silent><buffer><expr> <C-i> unite#do_action('preview')
+    endfunction
+
