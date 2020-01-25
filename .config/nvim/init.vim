@@ -74,6 +74,7 @@ call plug#end()
     autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
     set number relativenumber
     autocmd CursorHold * update
+    set nofoldenable
 
 " Enable autocompletion:
     set wildmode=longest,list,full
