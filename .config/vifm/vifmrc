@@ -56,7 +56,7 @@ fileviewer *.csv sed "s/,,,,/,,-,,/g;s/,,/ /g" %c | column -t | sed "s/ - /  /g"
 
 filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,*.mid mpv --no-audio-display --input-ipc-server=/tmp/mpvsoc$(date +%%s) %c
 filetype *.mp4,*.mkv mpv %f
-filetype *.pdf zathura %c
+filetype *.pdf nohup zathura %c &> /dev/null &
 fileview *.zip,*.rar,*.tar.gz atool -l %f
 filetype *.zip,*.rar,*.tar.gz ext %f
 
