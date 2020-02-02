@@ -14,6 +14,8 @@ fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-add
 
+# export PASSWORD_STORE_GPG_OPTS="--pinentry-mode loopback --passphrase YOUR_PASSPHRASE"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/beau/sci/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
