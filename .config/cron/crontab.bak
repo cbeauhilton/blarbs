@@ -1,6 +1,6 @@
 ### updates ##
 # sync mail
-20 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.profile; /usr/bin/mailsync
+*/10 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.profile; /usr/bin/mailsync
 # update music library
 0,15,30,45 * * * * /usr/bin/mpc update
 # download packages (but do not install)
