@@ -11,16 +11,37 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-fugitive'
     Plug 'scrooloose/nerdtree'
+    Plug 'scrooloose/nerdcommenter'
+    Plug 'jistr/vim-nerdtree-tabs'
+    Plug 'kien/ctrlp.vim'
+    " Python
+    Plug 'nvie/vim-flake8'
+    Plug 'vim-scripts/Pydiction'
+    Plug 'vim-scripts/indentpython.vim'
+    Plug 'scrooloose/syntastic'
+    Plug 'psf/black'
+    Plug 'vim-python/python-syntax'
+    Plug 'davidhalter/jedi-vim'   " jedi for python
+    " Plug 'Valloric/YouCompleteMe'
+    " Plug 'klen/rope-vim'
+
+    Plug 'ervandew/supertab'
+    ""code folding
+    Plug 'tmhedberg/SimpylFold'
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'jnurmine/Zenburn'
+
+    " Plug '/usr/local/opt/fzf'
     Plug 'junegunn/goyo.vim'
-    Plug 'junegunn/limelight.vim'
-    Plug '/usr/local/opt/fzf'
-    Plug 'junegunn/fzf.vim'
-    Plug 'PotatoesMaster/i3-vim-syntax'
-    Plug 'jreybert/vimagit'
-    Plug 'LukeSmithxyz/vimling'
+    " Plug 'junegunn/limelight.vim'
+    " Plug 'junegunn/fzf.vim'
+    " Plug 'PotatoesMaster/i3-vim-syntax'
+    " Plug 'jreybert/vimagit'
+    " Plug 'LukeSmithxyz/vimling'
     Plug 'vimwiki/vimwiki', {'as': 'vimwiki', 'branch': 'dev' }
-    Plug 'bling/vim-airline'
+    " Plug 'bling/vim-airline'
     Plug 'tpope/vim-commentary'
     Plug 'jalvesaq/Nvim-R'
     Plug 'vim-pandoc/vim-rmarkdown'
@@ -28,13 +49,10 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'vim-pandoc/vim-pandoc-syntax'
     Plug 'vifm/vifm.vim'
     Plug 'kovetskiy/sxhkd-vim'
-    Plug 'chazy/dirsettings'
+    " Plug 'chazy/dirsettings'
     " Plug 'jalvesaq/zotcite'
     Plug 'shougo/unite.vim'
     Plug 'rafaqz/citation.vim'
-    Plug 'psf/black'
-    Plug 'vim-python/python-syntax'
-    Plug 'davidhalter/jedi-vim'   " jedi for python
     Plug 'roxma/nvim-yarp'  " dependency of ncm2
     Plug 'ncm2/ncm2'  " awesome autocomplete plugin
     Plug 'HansPinckaers/ncm2-jedi'  " fast python completion
@@ -42,7 +60,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'ncm2/ncm2-path'  " filepath completion
     Plug 'frazrepo/vim-rainbow'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'scrooloose/nerdcommenter'
     Plug 'mileszs/ack.vim'
     Plug 'jiangmiao/auto-pairs'
 call plug#end()
@@ -75,6 +92,7 @@ call plug#end()
     set number relativenumber
     autocmd CursorHold * update
     set nofoldenable
+    set noswapfile
 
 " Enable autocompletion:
     set wildmode=longest,list,full
