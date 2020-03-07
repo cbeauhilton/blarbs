@@ -10,12 +10,17 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
+
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-fugitive'
-    Plug 'scrooloose/nerdtree'
+    Plug 'tpope/vim-commentary'
+
     Plug 'scrooloose/nerdcommenter'
+    Plug 'scrooloose/nerdtree'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'jistr/vim-nerdtree-tabs'
     Plug 'kien/ctrlp.vim'
+
     " Python
     Plug 'nvie/vim-flake8'
     Plug 'vim-scripts/Pydiction'
@@ -27,22 +32,19 @@ call plug#begin('~/.config/nvim/plugged')
     " Plug 'Valloric/YouCompleteMe'
     " Plug 'klen/rope-vim'
 
-    Plug 'ervandew/supertab'
-    ""code folding
+    " code folding
     Plug 'tmhedberg/SimpylFold'
     Plug 'altercation/vim-colors-solarized'
     Plug 'jnurmine/Zenburn'
 
     " Plug '/usr/local/opt/fzf'
+    " Plug 'junegunn/fzf.vim'
     Plug 'junegunn/goyo.vim'
     " Plug 'junegunn/limelight.vim'
-    " Plug 'junegunn/fzf.vim'
     " Plug 'PotatoesMaster/i3-vim-syntax'
     " Plug 'jreybert/vimagit'
-    " Plug 'LukeSmithxyz/vimling'
     Plug 'vimwiki/vimwiki', {'as': 'vimwiki', 'branch': 'dev' }
-    " Plug 'bling/vim-airline'
-    Plug 'tpope/vim-commentary'
+    Plug 'bling/vim-airline'
     Plug 'jalvesaq/Nvim-R'
     Plug 'vim-pandoc/vim-rmarkdown'
     Plug 'vim-pandoc/vim-pandoc'
@@ -50,9 +52,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'vifm/vifm.vim'
     Plug 'kovetskiy/sxhkd-vim'
     " Plug 'chazy/dirsettings'
-    " Plug 'jalvesaq/zotcite'
-    Plug 'shougo/unite.vim'
-    Plug 'rafaqz/citation.vim'
     Plug 'roxma/nvim-yarp'  " dependency of ncm2
     Plug 'ncm2/ncm2'  " awesome autocomplete plugin
     Plug 'HansPinckaers/ncm2-jedi'  " fast python completion
@@ -62,6 +61,11 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'mileszs/ack.vim'
     Plug 'jiangmiao/auto-pairs'
+    Plug 'shougo/unite.vim'
+    Plug 'rafaqz/citation.vim'
+    " Plug 'jalvesaq/zotcite'
+    Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 " path to python
@@ -143,7 +147,6 @@ call plug#end()
 " Coc only does snippet and additional edit on confirm.
     inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 " Use `[g` and `]g` to navigate diagnostics
     nmap <silent> [g <Plug>(coc-diagnostic-prev)
     nmap <silent> ]g <Plug>(coc-diagnostic-next)
@@ -199,23 +202,43 @@ call plug#end()
 " Splits open at the bottom and right.
     set splitbelow splitright
 
-" Nerd tree settings
-    map <leader>n :NERDTreeToggle<CR>
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Shortcut split opening
+    nnoremap <leader>h :split<Space>
+    nnoremap <leader>v :vsplit<Space>
 
 " NerdCommenter settings
     let g:NERDSpaceDelims = 1
     let g:NERDToggleCheckAllLines = 1
     let g:NERDCommentEmptyLines = 1
+    
 
-" vimling
-    nm <leader>d :call ToggleDeadKeys()<CR>
-    imap <leader>d <esc>:call ToggleDeadKeys()<CR>a
-    nm <leader>i :call ToggleIPA()<CR>
-    imap <leader>i <esc>:call ToggleIPA()<CR>a
-    nm <leader>q :call ToggleProse()<CR>
+" NERDTree
 
-" Shortcutting split navigation, saving a keypress:
+" open NERDTree automatically
+    autocmd VimEnter * NERDTree
+
+" Close if only NERDTree is open
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+    nmap <C-f> :NERDTreeToggle<CR>
+    let g:NERDTreeShowHidden=1
+    let g:NERDTreeGitStatusWithFlags = 1
+    let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+    let g:NERDTreeGitStatusNodeColorization = 1
+    let g:NERDTreeIgnore = ['^node_modules$']
+    let g:NERDTreeColorMapCustom = {
+    \ "Staged"    : "#0ee375",
+    \ "Modified"  : "#d9bf91",
+    \ "Renamed"   : "#51C9FC",
+    \ "Untracked" : "#FCE77C",
+    \ "Unmerged"  : "#FC51E6",
+    \ "Dirty"     : "#FFBD61",
+    \ "Clean"     : "#87939A",
+    \ "Ignored"   : "#808080"
+    \ }
+
+
+" Shortcutting split navigation:
     map <C-h> <C-w>h
     map <C-j> <C-w>j
     map <C-k> <C-w>k
@@ -237,13 +260,9 @@ call plug#end()
 " Open corresponding .pdf/.html or preview
     map <leader>p :!opout <c-r>%<CR><CR>
 
-" Runs a script that cleans out tex build files whenever I close out of a .tex file.
-    autocmd VimLeave *.tex !texclear %
-
-" Ensure files are read as what I want:
-    let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mkd': 'markdown', '.mdown': 'markdown'}
 
 " Vimwiki settings
+    let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mkd': 'markdown', '.mdown': 'markdown'}
     let g:vimwiki_list = [
             \ {'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md',
     \  'auto_diary_index': 1, 'auto_generate_links': 1,
@@ -256,6 +275,7 @@ call plug#end()
     let g:vimwiki_links_header = 'Links'
     let g:rmd_fenced_languages = ['r', 'python']
     let g:markdown_fenced_languages = ['r', 'python']
+
     autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
     autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
     autocmd BufRead,BufNewFile *.tex set filetype=tex
@@ -277,7 +297,20 @@ call plug#end()
 " Run xrdb whenever Xdefaults or Xresources are updated.
     autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 
+" Use <c-space> to trigger completion.
+    inoremap <silent><expr> <c-space> coc#refresh()
+
+" Highlight symbol under cursor on CursorHold
+    autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+    set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Alias write and quit to Q
+    nnoremap Q :wq<CR>
+
 " Navigating with guides
+    inoremap ;g <++>
     inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
     vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
     map <leader><leader> <Esc>/<++><Enter>"_c4l
@@ -301,6 +334,10 @@ call plug#end()
     autocmd Filetype rmd inoremap ,r ```{r}<CR>```<CR><CR><esc>2kO
     autocmd Filetype rmd inoremap ,p ```{python}<CR>```<CR><CR><esc>2kO
     autocmd Filetype rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
+
+" LaTeX
+" Runs a script that cleans out tex build files whenever I close out of a .tex file.
+    autocmd VimLeave *.tex !texclear %
 
 " citations
     let g:citation_vim_bibtex_file="repos/life/dox/acad.bib"
