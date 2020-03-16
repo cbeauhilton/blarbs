@@ -210,12 +210,12 @@ call plug#end()
     let g:NERDSpaceDelims = 1
     let g:NERDToggleCheckAllLines = 1
     let g:NERDCommentEmptyLines = 1
-    
+
 
 " NERDTree
 
 " open NERDTree automatically
-    autocmd VimEnter * NERDTree
+    " autocmd VimEnter * NERDTree
 
 " Close if only NERDTree is open
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
