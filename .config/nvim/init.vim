@@ -65,6 +65,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'rafaqz/citation.vim'
     " Plug 'jalvesaq/zotcite'
     Plug 'ryanoasis/vim-devicons'
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 call plug#end()
 
@@ -334,6 +335,31 @@ call plug#end()
     autocmd Filetype rmd inoremap ,r ```{r}<CR>```<CR><CR><esc>2kO
     autocmd Filetype rmd inoremap ,p ```{python}<CR>```<CR><CR><esc>2kO
     autocmd Filetype rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
+
+" markdown preview
+    " set to 1, nvim will open the preview window after entering the markdown buffer
+    " default: 0
+    let g:mkdp_auto_start = 0
+
+    " set to 1, the nvim will auto close current preview window when change
+    " from markdown buffer to another buffer
+    " default: 1
+    let g:mkdp_auto_close = 1
+
+    " set to 1, the vim will refresh markdown when save the buffer or
+    " leave from insert mode, default 0 is auto refresh markdown as you edit or
+    " move the cursor
+    " default: 0
+    let g:mkdp_refresh_slow = 0
+
+    " set to 1, the MarkdownPreview command can be use for all files,
+    " by default it can be use in markdown file
+    " default: 0
+    let g:mkdp_command_for_global = 0
+
+    " preview page title
+    " ${name} will be replace with the file name
+    let g:mkdp_page_title = '「${name}」'
 
 " LaTeX
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
