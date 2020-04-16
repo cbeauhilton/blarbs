@@ -1,8 +1,10 @@
 #!/usr/bin/env sh
+
 # Profile file. Runs on login.
 
 # Adds ruby to path
 PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+
 # Adds `~/.local/bin/` and all subdirectories to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 
