@@ -13,6 +13,7 @@ set ignorecase
 set smartcase
 set nohlsearch
 set incsearch
+set dotfiles
 set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 colorscheme luke
 
