@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 
-[ -f "$HOME/.xprofile" ] && . ~/.xprofile
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/xprofile" ] && . "${XDG_CONFIG_HOME:-$HOME/.config}/xprofile"
 
-exec i3
+exec dwm

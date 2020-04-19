@@ -20,13 +20,18 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export BIB="$HOME/repos/life/dox/acad.bib"
 export REFER="$HOME/repos/life/dox/thesis/thesis.refer"
 
+export LESSHISTFILE="-"
 export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"
-
 export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
+export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/inputrc"
+export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
+
 export CONDARC="${XDG_CONFIG_HOME:-$HOME/.config}/conda/.condarc"
+export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 
 export GPG_TTY=$(tty)
 export GPG_AGENT_INFO=""
