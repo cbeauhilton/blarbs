@@ -26,7 +26,10 @@ alias ka="killall" \
 	lsp="pacman -Qett --color=always | less" \
 	ffmpeg="ffmpeg -hide_banner" \
         abook="abook --config $XDG_CONFIG_HOME/abook/abookrc --datafile $XDG_DATA_HOME/abook/addressbook" \
-  	mbsync="mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc"
+  	mbsync="mbsync -c ${XDG_CONFIG_HOME:-$HOME/.config}/isync/mbsyncrc" \
+	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
+        wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
+
 
 
 

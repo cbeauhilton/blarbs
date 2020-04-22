@@ -16,9 +16,16 @@ export FILE="lf"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority" # mess with this sometime
 
 export BIB="$HOME/repos/life/dox/acad.bib"
 export REFER="$HOME/repos/life/dox/thesis/thesis.refer"
+
+export GEM_HOME="$XDG_DATA_HOME"/gem
+export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 
 export LESSHISTFILE="-"
 export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"
@@ -28,10 +35,14 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/inputrc"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+export WAKATIME_HOME="$XDG_CONFIG_HOME"/wakatime
 
 export CONDARC="${XDG_CONFIG_HOME:-$HOME/.config}/conda/.condarc"
-export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
-export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
+export IPYTHONDIR="${XDG_CONFIG_HOME:-$HOME/.config}/jupyter"
+export JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/jupyter"
+
+export R_ENVIRON_USER="${XDG_CONFIG_HOME:-$HOME/.config}/R/Renviron"
 
 export GPG_TTY=$(tty)
 export GPG_AGENT_INFO=""
@@ -116,7 +127,7 @@ ex=🎯:\
 echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc"
 
 # Start graphical server on tty1 if not already running.
-[ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx
+[ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx "$XDG_CONFIG_HOME/X11/xinitrc" --
 
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
