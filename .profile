@@ -23,6 +23,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export BIB="$HOME/repos/life/dox/acad.bib"
 export REFER="$HOME/repos/life/dox/thesis/thesis.refer"
 
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GEM_HOME="$XDG_DATA_HOME"/gem
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
@@ -124,15 +125,13 @@ ex=🎯:\
 
 [ ! -f ~/.config/shortcutrc ] && shortcuts >/dev/null 2>&1
 
-echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc"
-
 # Start graphical server on tty1 if not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx "$XDG_CONFIG_HOME/X11/xinitrc" --
 
-gpg-connect-agent updatestartuptty /bye >/dev/null
-
 # Switch escape and caps if tty:
 sudo -n loadkeys ~/.local/bin/ttymaps.kmap 2>/dev/null
+
+gpg-connect-agent updatestartuptty /bye >/dev/null
 
 # Start SSH Agent automatically on login
 if [ -z "$SSH_AUTH_SOCK" ]

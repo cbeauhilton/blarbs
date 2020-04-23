@@ -6,3 +6,6 @@
 
 .cache/
 ~/.config/Code/
+~/.config/gnupg
+~/.config/pam/pam_gnupg
+
