@@ -12,7 +12,7 @@ export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="brave"
 export READER="zathura"
-export FILE="lf"
+export FILE="nnn"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -38,6 +38,7 @@ export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/inputrc"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export WAKATIME_HOME="$XDG_CONFIG_HOME"/wakatime
+export MAILCAPS="$XDG_CONFIG_HOME"/tuir/mailcap
 
 export CONDARC="${XDG_CONFIG_HOME:-$HOME/.config}/conda/.condarc"
 export IPYTHONDIR="${XDG_CONFIG_HOME:-$HOME/.config}/jupyter"

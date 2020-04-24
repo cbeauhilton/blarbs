@@ -270,7 +270,7 @@ call plug#end()
 " Vimwiki settings
     let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mkd': 'markdown', '.mdown': 'markdown'}
     let g:vimwiki_list = [
-            \ {'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md',
+            \ {'path': '~/repos/vimwiki/', 'syntax': 'markdown', 'ext': '.md',
     \  'auto_diary_index': 1, 'auto_generate_links': 1,
             \  'toc_header_level' : 1, 'markdown_toc' : 1,
     \  'auto_generate_tags': 1, 'auto_tags': 1, 'auto_toc': 1,
