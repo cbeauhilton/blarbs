@@ -61,78 +61,8 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 
 mpd >/dev/null 2>&1 &
 
-# This is the list for lf icons:
-export LF_ICONS="di=📁:\
-fi=📃:\
-tw=🤝:\
-ow=📂:\
-ln=⛓:\
-or=❌:\
-ex=🎯:\
-*.txt=✍:\
-*.mom=✍:\
-*.me=✍:\
-*.ms=✍:\
-*.png=🖼:\
-*.ico=🖼:\
-*.jpg=📸:\
-*.jpeg=📸:\
-*.gif=🖼:\
-*.svg=🗺:\
-*.xcf=🖌:\
-*.html=🌎:\
-*.xml=📰:\
-*.gpg=🔒:\
-*.css=🎨:\
-*.pdf=📚:\
-*.djvu=📚:\
-*.epub=📚:\
-*.csv=📓:\
-*.xlsx=📓:\
-*.tex=📜:\
-*.md=📘:\
-*.r=📊:\
-*.R=📊:\
-*.rmd=📊:\
-*.Rmd=📊:\
-*.mp3=🎵:\
-*.opus=🎵:\
-*.ogg=🎵:\
-*.m4a=🎵:\
-*.flac=🎼:\
-*.mkv=🎥:\
-*.mp4=🎥:\
-*.webm=🎥:\
-*.mpeg=🎥:\
-*.avi=🎥:\
-*.zip=📦:\
-*.rar=📦:\
-*.7z=📦:\
-*.tar.gz=📦:\
-*.z64=🎮:\
-*.v64=🎮:\
-*.n64=🎮:\
-*.1=ℹ:\
-*.nfo=ℹ:\
-*.info=ℹ:\
-*.log=📙:\
-*.iso=📀:\
-*.img=📀:\
-*.bib=🎓:\
-*.ged=👪:\
-*.part=💔:\
-*.torrent=🔽:\
-"
-
 [ ! -f ~/.config/shortcutrc ] && shortcuts >/dev/null 2>&1
 
-# Start graphical server on tty1 if not already running.
-[ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx "$XDG_CONFIG_HOME/X11/xinitrc" --
-
-# Switch escape and caps if tty:
-sudo -n loadkeys ~/.local/bin/ttymaps.kmap 2>/dev/null
-
-gpg-connect-agent updatestartuptty /bye >/dev/null
 
 # Start SSH Agent automatically on login
 if [ -z "$SSH_AUTH_SOCK" ]
@@ -146,3 +76,11 @@ then
    fi
    eval `cat .ssh/ssh-agent`
 fi
+
+# Start graphical server on tty1 if not already running.
+[ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx "$XDG_CONFIG_HOME/X11/xinitrc" --
+
+# Switch escape and caps if tty:
+sudo -n loadkeys ~/.local/bin/ttymaps.kmap 2>/dev/null
+
+gpg-connect-agent updatestartuptty /bye >/dev/null

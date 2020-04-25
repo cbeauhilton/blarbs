@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-alias ka="killall" \
+alias   ka="killall" \
 	mkd="mkdir -pv" \
 	mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)" \
 	calcurse="calcurse -D ~/.config/calcurse" \
@@ -8,6 +8,7 @@ alias ka="killall" \
 	SS="sudo systemctl" \
 	f="$FILE" \
 	g="git" \
+        gp="git push" \
 	trem="transmission-remote" \
 	e="$EDITOR" \
 	v="$EDITOR" \
