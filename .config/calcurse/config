@@ -1,0 +1,11 @@
+[General]
+Hostname = apidata.googleusercontent.com
+Path = /caldav/v2/cbeauhilton@gmail.com/events/
+AuthMethod = oauth2
+SyncFilter = cal
+
+[OAuth2]
+ClientID =384567355342-fn42i6rmejsjg40od0778r6s7vhnv4m4.apps.googleusercontent.com
+ClientSecret =SKZpZ8qDgvI1PM0A5duH4C6n
+Scope = https://www.googleapis.com/auth/calendar
+RedirectURI = http://127.0.0.1

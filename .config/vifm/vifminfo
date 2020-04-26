@@ -1,0 +1,363 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'v
+	/home/beau/pix/bg
+	76679218_p0.jpg
+1584321186
+
+# Bookmarks:
+
+# TUI:
+al
+q1
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/mnt/HTPC
+	Comics
+1
+d/mnt
+	Other
+8
+d/mnt/Other
+	Beau Macbook z May 2019
+5
+d/mnt/Other/Beau Macbook z May 2019
+	Uno
+6
+d/mnt/Other/Beau Macbook z May 2019/Uno
+	OneDrive
+1
+d/mnt/Other/Beau Macbook z May 2019
+	Uno
+6
+d/mnt/Other
+	Beau Macbook Downloads July 2016
+2
+d/mnt/Other/Beau Macbook Downloads July 2016
+	spcsets
+12
+d/mnt/Other
+	Beau Macbook Documents July 2016 
+1
+d/mnt/Other/Beau Macbook Documents July 2016 
+	Other
+13
+d/mnt/Other/Beau Macbook Documents July 2016 /Other
+	Band
+1
+d/mnt/Other/Beau Macbook Documents July 2016 
+	WebEx
+16
+d/mnt/Other
+	Beau Macbook Documents July 2016 
+1
+d/mnt
+	HTPC
+7
+d/mnt/HTPC
+	Comics
+1
+
+# Right window history (oldest to newest):
+D/home/beau
+	..
+0
+
+# Command line history (oldest to newest):
+:chj
+:!mkdir manuscript
+:!mv *.* manuscript/
+:view
+:h
+:!mkdir vert
+:!mv vert_* vert/
+:!mkdir bg
+:!mv *.jpg bg/
+:!mv vert/ bg/
+:sort
+:!feh length_of_stay_over_5_days_Feature_Importances_24_2019-12-30-1140_-fs8.png
+:!chromium ccf.html
+:help
+:mkdir profiles
+
+# Search history (oldest to newest):
+/tes
+/cal
+/bud
+/EQ
+/vi
+
+# Prompt history (oldest to newest):
+pvert_fall_leaves
+pvert_colored_glass
+pvert_angled_tones
+pvert_street_shift_tilt
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/beau/.local/share/vifm/Trash/000_pic-full-200417-0728-22.png
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/beau/cell/.vifm-Trash-1000/000_The_Mother_of_All_Demos_presented_by_Douglas_Engelbart_1968_.mp4
+	/home/beau/cell/Movies/NewPipe/The_Mother_of_All_Demos_presented_by_Douglas_Engelbart_1968_.mp4
+t/home/beau/cell/.vifm-Trash-1000/000_Osborne_1_Computer_Part_3_Demonstration_and_Review.mp4
+	/home/beau/cell/Movies/NewPipe/Osborne_1_Computer_Part_3_Demonstration_and_Review.mp4
+t/home/beau/cell/.vifm-Trash-1000/000_The $34 Lenovo Thinkpad T400 Student Office Laptop_ eBay Finds.mp4
+	/home/beau/cell/Movies/NewPipe/The $34 Lenovo Thinkpad T400 Student Office Laptop_ eBay Finds.mp4
+t/home/beau/cell/.vifm-Trash-1000/000_IBM_ThinkPad_701C_The_Iconic_Butterfly_Keyboard.mp4
+	/home/beau/cell/Movies/NewPipe/IBM_ThinkPad_701C_The_Iconic_Butterfly_Keyboard.mp4
+t/home/beau/cell/.vifm-Trash-1000/000_Making a $35 Experimental Web-server Using Python, Lubuntu, and a Thinkpad.mp4
+	/home/beau/cell/Movies/NewPipe/Making a $35 Experimental Web-server Using Python, Lubuntu, and a Thinkpad.mp4
+t/home/beau/cell/.vifm-Trash-1000/000_Morecambe_and_Wise_Andre_Previn_The_full_sketch_.mp4
+	/home/beau/cell/Movies/NewPipe/Morecambe_and_Wise_Andre_Previn_The_full_sketch_.mp4
+t/home/beau/cell/.vifm-Trash-1000/000_Typesetting groff with Red + Live Reload Hack.mp4
+	/home/beau/cell/Movies/NewPipe/Typesetting groff with Red + Live Reload Hack.mp4
+t/home/beau/cell/.vifm-Trash-1000/000_Paco de Lucía & Al Di Meola - Mediterranean Sundance.mp4
+	/home/beau/cell/Movies/NewPipe/Paco de Lucía & Al Di Meola - Mediterranean Sundance.mp4
+t/home/beau/cell/.vifm-Trash-1000/000_Updating the BIOS on your Thinkpad X220_ Unlock your Laptop! (Plus Hot Drive_OS Swapping).mp4
+	/home/beau/cell/Movies/NewPipe/Updating the BIOS on your Thinkpad X220_ Unlock your Laptop! (Plus Hot Drive_OS Swapping).mp4
+t/home/beau/cell/.vifm-Trash-1000/000_Richard_Briers_Morecambe_and_Wise_Thames_Television.mp4
+	/home/beau/cell/Movies/NewPipe/Richard_Briers_Morecambe_and_Wise_Thames_Television.mp4
+t/home/beau/cell/.vifm-Trash-1000/000_Vinayak_Mehta_Extracting_tabular_data_from_PDFs_with_Camelot_Excalibur_PyCon_2019.mp4
+	/home/beau/cell/Movies/NewPipe/Vinayak_Mehta_Extracting_tabular_data_from_PDFs_with_Camelot_Excalibur_PyCon_2019.mp4
+t/home/beau/cell/.vifm-Trash-1000/000_That Boring Work-Flow Video everyone asked for! - Linux (0).mp4
+	/home/beau/cell/Movies/NewPipe/That Boring Work-Flow Video everyone asked for! - Linux (0).mp4
+t/home/beau/cell/.vifm-Trash-1000/000_ThinkPad X1 Carbon final review, Linux, notes and tips!.mp4
+	/home/beau/cell/Movies/NewPipe/ThinkPad X1 Carbon final review, Linux, notes and tips!.mp4
+t/home/beau/cell/.vifm-Trash-1000/000_peter_cook_best_of.mp4
+	/home/beau/cell/Movies/NewPipe/peter_cook_best_of.mp4
+t/home/beau/.local/share/vifm/Trash/000_How to Take Care of a Thinkpad Laptop.mp4
+	/home/beau/vids/np/How to Take Care of a Thinkpad Laptop.mp4
+t/home/beau/.local/share/vifm/Trash/000_How_the_Kilt_was_designed_to_be_opposite_to_the_English_Michael_McIntyre_s_Comedy_Roadshow_BBC.mp4
+	/home/beau/vids/np/How_the_Kilt_was_designed_to_be_opposite_to_the_English_Michael_McIntyre_s_Comedy_Roadshow_BBC.mp4
+t/home/beau/.local/share/vifm/Trash/000_Creedence_Clearwater_Revival_Lookin_Out_My_Back_Door_Official_Video_.mp4
+	/home/beau/vids/np/Creedence_Clearwater_Revival_Lookin_Out_My_Back_Door_Official_Video_.mp4
+t/home/beau/.local/share/vifm/Trash/000_ThinkPad_From_Past_to_Present.mp4
+	/home/beau/vids/np/ThinkPad_From_Past_to_Present.mp4
+t/home/beau/.local/share/vifm/Trash/000_yt_only.csv
+	/home/beau/sci/yt_pycon/yt_only.csv
+t/home/beau/.local/share/vifm/Trash/000_yt_only.json
+	/home/beau/sci/yt_pycon/yt_only.json
+t/home/beau/.local/share/vifm/Trash/000_foo.txt
+	/home/beau/sci/yt_pycon/foo.txt
+t/home/beau/.local/share/vifm/Trash/000_length_of_stay_over_5_days_Feature_Importances_24_2019-12-30-1140_-fs8.png
+	/home/beau/dl/npj/length_of_stay_over_5_days_Feature_Importances_24_2019-12-30-1140_-fs8.png
+t/home/beau/.local/share/vifm/Trash/000_pic-selected-200107-1722-06.png
+	/home/beau/pic-selected-200107-1722-06.png
+t/home/beau/.local/share/vifm/Trash/000_pic-selected-200107-1846-52.png
+	/home/beau/pic-selected-200107-1846-52.png
+t/home/beau/.local/share/vifm/Trash/001_index.log
+	/home/beau/index.log
+t/home/beau/.local/share/vifm/Trash/001_index.pdf
+	/home/beau/index.pdf
+t/home/beau/.local/share/vifm/Trash/000_R
+	/home/beau/R
+t/home/beau/.local/share/vifm/Trash/024__main.Rmd
+	/home/beau/bookdown/_main.Rmd
+t/home/beau/.local/share/vifm/Trash/000__main.html
+	/home/beau/bookdown/_main.html
+t/home/beau/.local/share/vifm/Trash/000__main.log
+	/home/beau/bookdown/_main.log
+t/home/beau/.local/share/vifm/Trash/000__main.pdf
+	/home/beau/bookdown/_book/_main.pdf
+t/home/beau/.local/share/vifm/Trash/000_chapter-1.html
+	/home/beau/bookdown/_book/chapter-1.html
+t/home/beau/.local/share/vifm/Trash/000_chapter-2.html
+	/home/beau/bookdown/_book/chapter-2.html
+t/home/beau/.local/share/vifm/Trash/000_search_index.json
+	/home/beau/bookdown/_book/search_index.json
+t/home/beau/.local/share/vifm/Trash/000_libs
+	/home/beau/bookdown/_book/libs
+t/home/beau/.local/share/vifm/Trash/000__book
+	/home/beau/bookdown/_book
+t/home/beau/.local/share/vifm/Trash/000_index.log
+	/home/beau/bookdown/index.log
+t/home/beau/.local/share/vifm/Trash/000_index.pdf
+	/home/beau/bookdown/index.pdf
+t/home/beau/.local/share/vifm/Trash/000_failure
+	/home/beau/repos/life/dox/2019/failure
+t/home/beau/.local/share/vifm/Trash/000_WWW.YTS.RE.jpg
+	/home/beau/Downloads/dl/WWW.YTS.RE.jpg
+t/home/beau/.local/share/vifm/Trash/000_retropie-4.5.1-rpi2_rpi3.img
+	/home/beau/dl/retropie-4.5.1-rpi2_rpi3.img
+t/home/beau/.local/share/vifm/Trash/000_summary_summary.csv
+	/home/beau/dl/summary_summary.csv
+t/home/beau/.local/share/vifm/Trash/000_0_force.pdf
+	/home/beau/0_force.pdf
+t/home/beau/.local/share/vifm/Trash/000_AP_curve_length_of_stay_over_3_days_Gaussian_Naive_Bayes.pdf
+	/home/beau/AP_curve_length_of_stay_over_3_days_Gaussian_Naive_Bayes.pdf
+t/home/beau/.local/share/vifm/Trash/001_ROC_curve_length_of_stay_over_3_days_Complement_Naive_Bayes.pdf
+	/home/beau/ROC_curve_length_of_stay_over_3_days_Complement_Naive_Bayes.pdf
+t/home/beau/.local/share/vifm/Trash/000_flattened.pdf
+	/home/beau/flattened.pdf
+t/home/beau/.local/share/vifm/Trash/000_lil
+	/home/beau/lil
+t/home/beau/.local/share/vifm/Trash/000_plots
+	/home/beau/plots
+t/home/beau/.local/share/vifm/Trash/000_65913057_p0.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/65913057_p0.png
+t/home/beau/.local/share/vifm/Trash/000_1014517_n.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/1014517_n.png
+t/home/beau/.local/share/vifm/Trash/000_61801733_p0-4k.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/61801733_p0-4k.jpg
+t/home/beau/.local/share/vifm/Trash/000_64265540_p0.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/64265540_p0.png
+t/home/beau/.local/share/vifm/Trash/000_65978144_p0.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/65978144_p0.png
+t/home/beau/.local/share/vifm/Trash/000_66033435_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/66033435_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_66062194_p0.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/66062194_p0.png
+t/home/beau/.local/share/vifm/Trash/000_66150999_p0.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/66150999_p0.png
+t/home/beau/.local/share/vifm/Trash/000_66155380_p0.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/66155380_p0.png
+t/home/beau/.local/share/vifm/Trash/000_66288384_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/66288384_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_66482829_p0.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/66482829_p0.png
+t/home/beau/.local/share/vifm/Trash/000_66772969_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/66772969_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_66957561_p0.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/66957561_p0.png
+t/home/beau/.local/share/vifm/Trash/000_67492833_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/67492833_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_69905729_p16.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/69905729_p16.jpg
+t/home/beau/.local/share/vifm/Trash/000_70056405_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/70056405_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_72475416_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/72475416_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_75057185_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/75057185_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_76883612_p0-crop.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/76883612_p0-crop.png
+t/home/beau/.local/share/vifm/Trash/000_78332312_p0-edit.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/78332312_p0-edit.png
+t/home/beau/.local/share/vifm/Trash/000_New Game.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/New Game.png
+t/home/beau/.local/share/vifm/Trash/000___ichigo_ikuno_kokoro_miku_and_zero_two_darling_in_the_franxx_drawn_by_neko_yanshoujie__d6845f64771f24f7ef134c3cda53129e.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/__ichigo_ikuno_kokoro_miku_and_zero_two_darling_in_the_franxx_drawn_by_neko_yanshoujie__d6845f64771f24f7ef134c3cda53129e.jpg
+t/home/beau/.local/share/vifm/Trash/000___ram_and_rom_four_goddesses_online_cyber_dimension_neptune_and_neptune_series_drawn_by_tsunako__77ad6ac4ef8d9a026f248645083631c9.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/__ram_and_rom_four_goddesses_online_cyber_dimension_neptune_and_neptune_series_drawn_by_tsunako__77ad6ac4ef8d9a026f248645083631c9.png
+t/home/beau/.local/share/vifm/Trash/000_nero_x_nero_by_rosuuri-dbe7tam.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/nero_x_nero_by_rosuuri-dbe7tam.jpg
+t/home/beau/.local/share/vifm/Trash/000_wi5j.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/wi5j.jpg
+t/home/beau/.local/share/vifm/Trash/000_xxgn.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/xxgn.jpg
+t/home/beau/.local/share/vifm/Trash/000_3i53sy8dv52z.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/3i53sy8dv52z.png
+t/home/beau/.local/share/vifm/Trash/000_1014517.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Anime/1014517.png
+t/home/beau/.local/share/vifm/Trash/000_4hqFNve.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Tech/4hqFNve.jpg
+t/home/beau/.local/share/vifm/Trash/000_arch_linux_wallpaper_by_wavering_radiant-d6ivbsy.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Tech/arch_linux_wallpaper_by_wavering_radiant-d6ivbsy.png
+t/home/beau/.local/share/vifm/Trash/000_78467431_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/78467431_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_Tech
+	/home/beau/dl/wallpapers-master/wallpapers-master/Tech
+t/home/beau/.local/share/vifm/Trash/000_65807374_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Other/65807374_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_69580898_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Other/69580898_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_75321273_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Other/75321273_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_75354898_p8.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Other/75354898_p8.jpg
+t/home/beau/.local/share/vifm/Trash/000_77559996_p0.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Other/77559996_p0.png
+t/home/beau/.local/share/vifm/Trash/000_65303230_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Night/65303230_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_66934858_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Night/66934858_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_67090107_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Night/67090107_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_68858507_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Night/68858507_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_75588118_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Night/75588118_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_76051900_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Night/76051900_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_59954530_p0_master1200.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Japan/59954530_p0_master1200.jpg
+t/home/beau/.local/share/vifm/Trash/000_66134381_p0.png
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Japan/66134381_p0.png
+t/home/beau/.local/share/vifm/Trash/000_76760261_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Japan/76760261_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_64317507_p0-1080.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Day/64317507_p0-1080.jpg
+t/home/beau/.local/share/vifm/Trash/000_64317507_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Day/64317507_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_arch_btw_63606459_p0-1080.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Arch/arch_btw_63606459_p0-1080.jpg
+t/home/beau/.local/share/vifm/Trash/000_arch_btw_75321273_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Arch/arch_btw_75321273_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_62335563_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Afternoon/62335563_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_63606459_p0-1080.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Afternoon/63606459_p0-1080.jpg
+t/home/beau/.local/share/vifm/Trash/000_63606459_p0.jpg
+	/home/beau/dl/wallpapers-master/wallpapers-master/Art/Afternoon/63606459_p0.jpg
+t/home/beau/.local/share/vifm/Trash/000_README.md
+	/home/beau/dl/wallpapers-master/wallpapers-master/README.md
+t/home/beau/.local/share/vifm/Trash/000_r
+	/home/beau/r
+t/home/beau/.local/share/vifm/Trash/000_see_attached_power_point,_PDFs,_and_website_links_in_follow_up_from_the_CCLCM_Class_of_2020_meeting_today_on_Rank_List,_SOAP,_and_Match_Day
+	/home/beau/dl/see_attached_power_point,_PDFs,_and_website_links_in_follow_up_from_the_CCLCM_Class_of_2020_meeting_today_on_Rank_List,_SOAP,_and_Match_Day
+t/home/beau/.local/share/vifm/Trash/000_1a CCLCM Capstone 2020 Agenda Rev012220.doc
+	/home/beau/dl/1a CCLCM Capstone 2020 Agenda Rev012220.doc
+t/home/beau/.local/share/vifm/Trash/000_2020_Excellence_in_Research_Education_Award_Nominees.pdf
+	/home/beau/dl/2020_Excellence_in_Research_Education_Award_Nominees.pdf
+t/home/beau/.local/share/vifm/Trash/000_2020_Graduating_Students_Outstanding_Contribution_Award_Nominees.pdf
+	/home/beau/dl/2020_Graduating_Students_Outstanding_Contribution_Award_Nominees.pdf
+t/home/beau/.local/share/vifm/Trash/000_2020_Kaiser_Permanente_Excellence_in_Teaching_Award_(Clinical)_Nominees (1).pdf
+	/home/beau/dl/2020_Kaiser_Permanente_Excellence_in_Teaching_Award_(Clinical)_Nominees (1).pdf
+t/home/beau/.local/share/vifm/Trash/000_2020_Kaiser_Permanente_Excellence_in_Teaching_Award_(Clinical)_Nominees.pdf
+	/home/beau/dl/2020_Kaiser_Permanente_Excellence_in_Teaching_Award_(Clinical)_Nominees.pdf
+t/home/beau/.local/share/vifm/Trash/000_2020_Kaiser_Permanente_Excellence_in_Teaching_Award_(Pre-Clinical)_Nominees.pdf
+	/home/beau/dl/2020_Kaiser_Permanente_Excellence_in_Teaching_Award_(Pre-Clinical)_Nominees.pdf
+t/home/beau/.local/share/vifm/Trash/000_ASCO Abstract - cancer readmission model, final.docx
+	/home/beau/dl/ASCO Abstract - cancer readmission model, final.docx
+t/home/beau/.local/share/vifm/Trash/000_Dear Class of 2020.pdf
+	/home/beau/dl/Dear Class of 2020.pdf
+t/home/beau/.local/share/vifm/Trash/000_NPG-B4000220C_1 (1).jpg
+	/home/beau/dl/NPG-B4000220C_1 (1).jpg
+t/home/beau/.local/share/vifm/Trash/000_NPG-B4000220C_1.jpg
+	/home/beau/dl/NPG-B4000220C_1.jpg
+t/home/beau/.local/share/vifm/Trash/000_NPG-B4000220C_1.tif
+	/home/beau/dl/NPG-B4000220C_1.tif
+t/home/beau/.local/share/vifm/Trash/000_NPG-B4000220C_2.jpg
+	/home/beau/dl/NPG-B4000220C_2.jpg
+t/home/beau/.local/share/vifm/Trash/000_NPG-NPG_79_97.jpg
+	/home/beau/dl/NPG-NPG_79_97.jpg
+t/home/beau/.local/share/vifm/Trash/000_2020-MRM-Applicant-Checklist.pdf
+	/home/beau/dl/pdf/2020-MRM-Applicant-Checklist.pdf
+t/home/beau/.local/share/vifm/Trash/000_Delta.pdf
+	/home/beau/dl/pdf/Delta.pdf
+t/home/beau/.local/share/vifm/Trash/000_EQBudgetProposal.pdf
+	/home/beau/dl/pdf/EQBudgetProposal.pdf
+t/home/beau/.local/share/vifm/Trash/000_nintedanib_review_2019.pdf
+	/home/beau/dl/pdf/nintedanib_review_2019.pdf
+t/home/beau/.local/share/vifm/Trash/000_ild-elderly-ra.pdf
+	/home/beau/dl/pdf/ild-elderly-ra.pdf
+t/home/beau/.local/share/vifm/Trash/000_budgetSummaryReport.pdf
+	/home/beau/dl/pdf/budgetSummaryReport.pdf
+t/home/beau/.local/share/vifm/Trash/000_budgetDetailReport.pdf
+	/home/beau/dl/pdf/budgetDetailReport.pdf
+t/home/beau/.local/share/vifm/Trash/000_YWBudgetProposal.pdf
+	/home/beau/dl/pdf/YWBudgetProposal.pdf
+t/home/beau/.local/share/vifm/Trash/000_chrome-aghbiahbpaijignceidepookljebhfak-Default.desktop
+	/home/beau/chrome-aghbiahbpaijignceidepookljebhfak-Default.desktop
+t/home/beau/.local/share/vifm/Trash/000_pic-full-200417-0728-22.png
+	/home/beau/pic-full-200417-0728-22.png

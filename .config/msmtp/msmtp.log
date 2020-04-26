@@ -1,0 +1,3 @@
+Jan 28 12:05:19 host=smtp.gmail.com tls=on auth=on user=cbeauhilton@gmail.com from=cbeauhilton@gmail.com recipients=cbeauhilton@gmail.com mailsize=708 smtpstatus=250 smtpmsg='250 2.0.0 OK  1580231019 g190sm8468639ywd.85 - gsmtp' exitcode=EX_OK
+Jan 30 06:19:11 host=smtp.gmail.com tls=on auth=on user=cbeauhilton@gmail.com from=cbeauhilton@gmail.com recipients=cbeauhilton@gmail.com mailsize=12853 smtpstatus=250 smtpmsg='250 2.0.0 OK  1580383049 n64sm1741723otn.35 - gsmtp' exitcode=EX_OK
+Feb 06 11:05:42 host=smtp.gmail.com tls=on auth=on user=cbeauhilton@gmail.com from=cbeauhilton@gmail.com recipients=nathanradakovich@gmail.com mailsize=401 smtpstatus=250 smtpmsg='250 2.0.0 OK  1581005031 c84sm1629852ywa.1 - gsmtp' exitcode=EX_OK

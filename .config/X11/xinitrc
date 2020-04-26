@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/xprofile" ] && . "${XDG_CONFIG_HOME:-$HOME/.config}/xprofile"
+
+while true; do
+  dwm 2> /dev/null
+  dwmblocks 2> /dev/null
+done

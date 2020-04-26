@@ -1,0 +1,4 @@
+CENSUS_API_KEY='c92c0a70527edc1d91a8c7272af0cb463a4251cf'
+R_PROFILE_USER =${XDG_CONFIG_HOME:-$HOME/.config}/R/Rprofile
+R_LIBS_USER = ${XDG_CONFIG_HOME:-$HOME/.config}/R/library
+R_HISTFILE = ${XDG_CONFIG_HOME:-$HOME/.config}/R/history.Rhistory

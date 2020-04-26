@@ -1,0 +1,23 @@
+# setup module
+echo '[Unit]
+Description=SSH key agent
+
+[Service]
+Type=simple
+Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
+ExecStart=/usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
+
+[Install]
+WantedBy=default.target' \
+  > ~/.config/systemd/user/ssh-agent.service
+
+# setup environment
+echo 'SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"' \
+  > ~/.pam_environment
+
+# enable now and at boot
+systemctl --user start ssh-agent
+systemctl --user enable ssh-agent
+
+# enable lingering
+loginctl enable-linger $(whoami)

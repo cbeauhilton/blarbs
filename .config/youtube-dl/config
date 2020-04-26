@@ -1,0 +1,8 @@
+-o ~/vids/%(title)s.%(ext)s
+--restrict-filenames
+--external-downloader aria2c
+--external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M'
+--add-metadata --all-subs --embed-subs --embed-thumbnail
+--merge-output-format mkv
+--write-info-json
+-i
